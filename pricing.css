@@ -1,0 +1,245 @@
+/* =========================================
+   LENTECH'S — pricing.css
+   Styles specific to pricing.html only
+   ========================================= */
+
+.pricing-page { background: var(--dark); }
+
+/* ── PAGE HERO ── */
+.ph {
+  position: relative; min-height: 42vh;
+  display: flex; align-items: flex-end;
+  padding-top: 72px; overflow: hidden;
+  background: var(--black);
+}
+.ph__bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(201,168,76,.06) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, transparent 0, transparent 28px, rgba(201,168,76,.025) 28px, rgba(201,168,76,.025) 29px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 28px, rgba(201,168,76,.025) 28px, rgba(201,168,76,.025) 29px);
+}
+.ph__veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,7,6,.9) 0%, transparent 70%);
+}
+.ph__inner {
+  position: relative; z-index: 1;
+  padding-bottom: 4rem; padding-top: 3rem;
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.ph__back {
+  font-family: var(--ff-sans); font-size: .6rem;
+  font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  transition: color .2s; align-self: flex-start;
+}
+.ph__back:hover { color: var(--gold); }
+.ph__title {
+  font-family: var(--ff-serif); font-weight: 300;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 1; color: var(--off); letter-spacing: -.01em;
+}
+.ph__sub {
+  font-family: var(--ff-sans); font-weight: 300;
+  font-size: .95rem; color: rgba(255,255,255,.45);
+  max-width: 54ch; line-height: 1.7;
+}
+.ph__meta {
+  display: flex; align-items: center; gap: .9rem; flex-wrap: wrap;
+  font-family: var(--ff-sans); font-size: .6rem;
+  font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+}
+
+/* ── STICKY TABS ── */
+.ptabs-wrap {
+  position: sticky; top: 68px; z-index: 100;
+  background: rgba(8,7,6,.95);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: .75rem 0;
+}
+.ptabs-wrap .price-tabs {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+/* ── PACKAGE SECTIONS ── */
+.pkg-section {
+  padding: 5rem 0;
+  background: var(--dark);
+}
+.pkg-section--alt {
+  background: var(--cream);
+}
+.pkg-section__hd {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; align-items: start;
+  margin-bottom: 3rem;
+}
+.pkg-section__title {
+  font-family: var(--ff-serif); font-weight: 300;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--off); line-height: 1.1;
+}
+.pkg-section__title--dark { color: var(--black); }
+.pkg-section__desc {
+  font-family: var(--ff-sans); font-weight: 300;
+  font-size: .9rem; color: rgba(255,255,255,.38); line-height: 1.8;
+  padding-top: .5rem;
+}
+.pkg-section__desc--dark { color: var(--mid); }
+
+/* ── PACKAGE GRID — static, wraps ── */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.06);
+}
+.pkg-grid--light {
+  background: var(--sand);
+}
+
+/* Light variant cards (for cream sections) */
+.pc--light {
+  background: var(--off) !important;
+  outline: 1px solid var(--sand) !important;
+}
+.pc--light:hover { background: var(--cream) !important; }
+.pc--feat-light {
+  background: var(--white) !important;
+  outline: 1px solid var(--gold) !important;
+  z-index: 1;
+}
+.pc--feat-light:hover { background: var(--white) !important; }
+.pc__tag--dark { color: var(--gold3) !important; }
+.pc__name--dark { color: var(--black) !important; }
+.pc__price--dark { border-bottom-color: var(--sand) !important; }
+.pc__cur--dark { color: rgba(0,0,0,.3) !important; }
+.pc__val--dark { color: var(--black) !important; }
+.pc__per--dark { color: var(--warm) !important; }
+
+/* ── ADD-ONS TABLE ── */
+.addon-table {
+  margin-top: 3rem;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 2rem 2.5rem;
+}
+.addon-table__title {
+  font-family: var(--ff-sans); font-size: .65rem;
+  font-weight: 600; letter-spacing: .25em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem;
+}
+.addon-table__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .1rem;
+}
+
+/* ── GENERAL ADDON ROW ── */
+.addon-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: .7rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  font-family: var(--ff-sans); font-size: .85rem;
+}
+.addon-row span:first-child { color: rgba(255,255,255,.55); }
+.addon-row span:last-child {
+  font-weight: 500; color: var(--gold);
+  white-space: nowrap; padding-left: 1rem;
+}
+
+/* ── ADDONS SECTION ── */
+.addons-section {
+  background: var(--black);
+  padding: 5rem 0;
+}
+.addons-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.07);
+}
+.addons-grid .addon-row {
+  padding: .75rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  border-right: 1px solid rgba(255,255,255,.05);
+}
+.addons-grid .addon-row:nth-child(even) { border-right: none; }
+
+/* ── BOTTOM CTA ── */
+.pricing-cta {
+  background: var(--coal);
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 5rem 0;
+}
+.pricing-cta__inner {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 3rem; align-items: center;
+}
+.pricing-cta__heading {
+  font-family: var(--ff-serif); font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  color: var(--off); line-height: 1.2;
+  margin-bottom: .75rem;
+}
+.pricing-cta__sub {
+  font-size: .9rem; color: rgba(255,255,255,.38); line-height: 1.6;
+}
+.pricing-cta__btns { display: flex; flex-direction: column; gap: .75rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .pkg-grid { grid-template-columns: repeat(2, 1fr); }
+  .addons-grid { grid-template-columns: 1fr; }
+  .addons-grid .addon-row { border-right: none; }
+}
+@media (max-width: 768px) {
+  .ph { min-height: 50vh; }
+  .ph__inner { padding-bottom: 3rem; }
+  .ptabs-wrap { top: 64px; overflow-x: auto; }
+  .ptabs-wrap .price-tabs { flex-wrap: nowrap; width: max-content; }
+  .pkg-section__hd { grid-template-columns: 1fr; gap: 1rem; }
+  .pkg-grid { grid-template-columns: 1fr; background: none; gap: 1rem; }
+  .pkg-grid--light { background: none; }
+  .addon-table__grid { grid-template-columns: 1fr; }
+  .pricing-cta__inner { grid-template-columns: 1fr; }
+  .pricing-cta__btns { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .ph__title { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+  .addons-grid { grid-template-columns: 1fr; }
+}
+
+/* ── FIXES: light card text + empty cell bleed ── */
+
+/* List text must be dark on light cards */
+.pc--light .pc__list li.y { color: var(--mid) !important; }
+.pc--light .pc__list li.n { color: var(--stone) !important; text-decoration: line-through; }
+.pc--light .pc__list li.y::before { color: var(--gold3) !important; }
+.pc--light .pc__list li.n::before { color: var(--stone) !important; }
+
+/* Prevent empty grid cells from showing background bleed */
+.pkg-grid--light {
+  background: none !important;
+  gap: 1px;
+}
+.pkg-grid--light .pc--light,
+.pkg-grid--light .pc--feat-light {
+  border: 1px solid var(--sand);
+}
+
+/* Stop featured card from stretching into empty columns */
+.pkg-grid { align-items: start; }
+
+/* Grad section: only 2 cards, don't stretch to fill 3rd col */
+.pkg-grid--light {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (min-width: 1024px) {
+  .pkg-grid--light { grid-template-columns: repeat(3, 1fr); }
+  /* Cap grad + studio grids so they don't stretch featured card */
+  .pkg-section--alt .pkg-grid--light {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+    justify-content: start;
+  }
+}

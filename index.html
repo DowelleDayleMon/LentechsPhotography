@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Lentech's Photography Studio — Where Every Click Tells Your Story. Professional photography studio in Olongapo City."/>
+  <meta name="theme-color" content="#080706"/>
+  <meta property="og:title" content="Lentech's Photography Studio"/>
+  <meta property="og:description" content="Where Every Click Tells Your Story. Olongapo's premier photography studio."/>
+  <meta property="og:image" content="images/hero-studio.jpg"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"PhotographyBusiness","name":"Lentech's Photography Studio","telephone":"0918-933-0818","email":"lentechsphotographystudio@gmail.com","address":{"@type":"PostalAddress","streetAddress":"2F La Nostra Casa Bldg., 36 Gordon Avenue, Asinan","addressLocality":"Olongapo City","addressCountry":"PH"}}</script>
+  <title>Lentech's Photography Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- GRAIN -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"></div>
+  <span class="cursor__label" id="cursorLabel"></span>
+</div>
+
+<!-- ═══════════════════════════
+     SPLASH — cinematic reveal
+════════════════════════════ -->
+<div class="splash" id="splash" aria-hidden="true">
+
+  <!-- LV-style monogram pattern overlay -->
+  <div class="splash__pattern" aria-hidden="true"></div>
+
+  <!-- Gold horizontal reveal bars -->
+  <div class="splash__curtain splash__curtain--top" id="curtainTop"></div>
+  <div class="splash__curtain splash__curtain--bot" id="curtainBot"></div>
+
+  <!-- Center content -->
+  <div class="splash__stage" id="splashStage">
+    <!-- Camera aperture SVG -->
+    <div class="splash__lens" id="splashLens" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(201,168,76,.25)" stroke-width="1"/>
+        <circle cx="100" cy="100" r="70"  fill="none" stroke="rgba(201,168,76,.15)" stroke-width=".5"/>
+        <circle cx="100" cy="100" r="44"  fill="none" stroke="rgba(201,168,76,.35)" stroke-width="1.5"/>
+        <!-- Aperture blades -->
+        <g id="apertureBlades" transform="translate(100,100)">
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(0)"  />
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(30)" />
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(60)" />
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(90)" />
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(120)"/>
+          <ellipse rx="38" ry="14" fill="rgba(8,7,6,.95)" transform="rotate(150)"/>
+        </g>
+        <circle cx="100" cy="100" r="10" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <!-- Logo assembly -->
+    <div class="splash__logo-wrap" id="splashLogo">
+      <div class="splash__logo-line splash__logo-line--top" aria-hidden="true"></div>
+      <div class="splash__logo-name">
+        <span class="splash__logo-l">L</span><span class="splash__logo-rest" id="splashScramble">ENTECH'S</span>
+      </div>
+      <div class="splash__logo-sub">Photography Studio</div>
+      <div class="splash__logo-line splash__logo-line--bot" aria-hidden="true"></div>
+    </div>
+
+    <div class="splash__location" id="splashLocation">
+      <span>Est. 2025</span>
+      <span class="splash__location-dot" aria-hidden="true">✦</span>
+      <span>Olongapo City</span>
+    </div>
+  </div>
+
+  <!-- Shutter flash -->
+  <div class="splash__flash" id="splashFlash" aria-hidden="true"></div>
+
+  <!-- Bottom progress -->
+  <div class="splash__footer">
+    <div class="splash__progress">
+      <div class="splash__progress-fill" id="splashFill"></div>
+    </div>
+    <span class="splash__loading-text" id="splashLoadText">Loading</span>
+  </div>
+</div>
+
+<!-- FLOATING BOOK CTA -->
+<a href="#contact" class="float-cta" id="floatCta" data-cursor="book" aria-label="Book a session">
+  <span class="float-cta__icon" aria-hidden="true">◎</span>
+  <span class="float-cta__text">Book Now</span>
+</a>
+
+<!-- ═══════════════
+     NAV
+═══════════════ -->
+<nav class="nav" id="nav">
+  <a href="#home" class="nav__logo" aria-label="Lentech's Photography Studio — home">
+    <span class="nav__logo-l">L</span><span class="nav__logo-rest">ENTECH'S</span>
+  </a>
+
+
+  <ul class="nav__links" role="list">
+    <li><a href="#services"     class="nav__link" data-section="services"     data-cursor="explore">Services</a></li>
+    <li><a href="#gallery"      class="nav__link" data-section="gallery"      data-cursor="view">Gallery</a></li>
+    <li><a href="#pricing"      class="nav__link" data-section="pricing"      data-cursor="invest">Pricing</a></li>
+    <li><a href="#testimonials" class="nav__link" data-section="testimonials" data-cursor="read">Reviews</a></li>
+    <li><a href="#contact"      class="nav__link" data-section="contact"      data-cursor="talk">Contact</a></li>
+  </ul>
+
+  <a href="#contact" class="nav__book" data-cursor="book">Book a Session</a>
+
+  <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span class="nav__ham-line"></span>
+    <span class="nav__ham-line"></span>
+    <span class="nav__ham-line nav__ham-line--short"></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__inner">
+    <ul role="list">
+      <li style="--i:0"><a href="#services"     class="mobile-link">Services</a></li>
+      <li style="--i:1"><a href="#gallery"      class="mobile-link">Gallery</a></li>
+      <li style="--i:2"><a href="#pricing"      class="mobile-link">Pricing</a></li>
+      <li style="--i:3"><a href="#testimonials" class="mobile-link">Reviews</a></li>
+      <li style="--i:4"><a href="#contact"      class="mobile-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="mobile-menu__cta">
+      Book a Session <span aria-hidden="true">↗</span>
+    </a>
+    <div class="mobile-menu__info">
+      <span>0918-933-0818</span>
+      <span aria-hidden="true">·</span>
+      <span>Olongapo City</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════
+     HERO
+═══════════════ -->
+<section class="hero" id="home">
+
+  <!-- 3-panel split images -->
+  <div class="hero__panels">
+    <div class="hero__panel hero__panel--1">
+      <img src="assets/hero1.jpg" width="900" height="1200"
+           alt="Professional studio interior with dramatic softbox lighting" loading="eager"/>
+      <div class="hero__panel-veil" aria-hidden="true"></div>
+    </div>
+    <div class="hero__panel hero__panel--2">
+      <img src="assets/spot.jpg" width="560" height="1200"
+           alt="Studio portrait under a single dramatic spotlight" loading="eager"/>
+      <div class="hero__panel-veil" aria-hidden="true"></div>
+    </div>
+    <div class="hero__panel hero__panel--3">
+      <img src="assets/couple.jpg" width="360" height="1200"
+           alt="Couple in an intimate portrait session" loading="eager"/>
+      <div class="hero__panel-veil" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Dark gradient overlay -->
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <!-- LV-style thin border frame (decorative) -->
+  <div class="hero__frame" aria-hidden="true"></div>
+
+  <!-- Main content — all line breaks controlled -->
+  <div class="hero__body">
+
+    <div class="hero__eyebrow" id="heroEyebrow">
+      <span class="hero__eyebrow-rule" aria-hidden="true"></span>
+      <span class="hero__eyebrow-text">Est. 2025 &nbsp;—&nbsp; Olongapo City</span>
+      <span class="hero__eyebrow-rule" aria-hidden="true"></span>
+    </div>
+
+    <!-- Each LINE is a separate div. Zero flex-wrap chaos. -->
+    <h1 class="hero__headline" id="heroHeadline">
+      <div class="hero__line" id="hLine1">
+        <span class="hero__char">W</span><span class="hero__char">h</span><span class="hero__char">e</span><span class="hero__char">r</span><span class="hero__char">e</span>
+        <span class="hero__space"> </span>
+        <span class="hero__char hero__char--gold">E</span><span class="hero__char hero__char--gold">v</span><span class="hero__char hero__char--gold">e</span><span class="hero__char hero__char--gold">r</span><span class="hero__char hero__char--gold">y</span>
+      </div>
+      <div class="hero__line hero__line--2" id="hLine2">
+        <span class="hero__char hero__char--italic">C</span><span class="hero__char hero__char--italic">l</span><span class="hero__char hero__char--italic">i</span><span class="hero__char hero__char--italic">c</span><span class="hero__char hero__char--italic">k</span>
+        <span class="hero__space"> </span>
+        <span class="hero__char">T</span><span class="hero__char">e</span><span class="hero__char">l</span><span class="hero__char">l</span><span class="hero__char">s</span>
+      </div>
+      <div class="hero__line hero__line--3" id="hLine3">
+        <span class="hero__char hero__char--outline">Y</span><span class="hero__char hero__char--outline">o</span><span class="hero__char hero__char--outline">u</span><span class="hero__char hero__char--outline">r</span>
+        <span class="hero__space"> </span>
+        <span class="hero__char">S</span><span class="hero__char">t</span><span class="hero__char">o</span><span class="hero__char">r</span><span class="hero__char">y</span>
+      </div>
+    </h1>
+
+    <div class="hero__sub-wrap" id="heroSub">
+      <p class="hero__sub">Professional photography studio &mdash; self-shoots, portraits,<br class="hero__br"/> events, and everything in between.</p>
+    </div>
+
+    <div class="hero__actions" id="heroActions">
+      <a href="#pricing" class="btn btn--gold" data-cursor="explore">View Packages</a>
+      <a href="#gallery" class="hero__text-link" data-cursor="view">
+        Explore Gallery <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom stats bar -->
+  <div class="hero__stats" id="heroStats">
+    <div class="hero__stat">
+      <span class="hero__stat-num" data-count="500">0</span><sup>+</sup>
+      <span class="hero__stat-label">Sessions</span>
+    </div>
+    <div class="hero__stat-rule" aria-hidden="true"></div>
+    <div class="hero__stat">
+      <span class="hero__stat-num" data-count="12">0</span>
+      <span class="hero__stat-label">Services</span>
+    </div>
+    <div class="hero__stat-rule" aria-hidden="true"></div>
+    <div class="hero__stat">
+      <span class="hero__stat-num" data-count="100">0</span><sup>%</sup>
+      <span class="hero__stat-label">Satisfaction</span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <div class="hero__scroll-track"><div class="hero__scroll-fill"></div></div>
+    <span>Scroll</span>
+  </div>
+
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>Self-Photoshoot</span><em>✦</em>
+      <span>Family Portraits</span><em>✦</em>
+      <span>Graduation</span><em>✦</em>
+      <span>Conceptual</span><em>✦</em>
+      <span>Product Photography</span><em>✦</em>
+      <span>Video Coverage</span><em>✦</em>
+      <span>Studio Rental</span><em>✦</em>
+      <span>Photobooth</span><em>✦</em>
+      <span>Self-Photoshoot</span><em>✦</em>
+      <span>Family Portraits</span><em>✦</em>
+      <span>Graduation</span><em>✦</em>
+      <span>Conceptual</span><em>✦</em>
+      <span>Product Photography</span><em>✦</em>
+      <span>Video Coverage</span><em>✦</em>
+      <span>Studio Rental</span><em>✦</em>
+      <span>Photobooth</span><em>✦</em>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════
+     ABOUT
+═══════════════ -->
+<section class="about section" id="about">
+  <div class="section-num" aria-hidden="true">01</div>
+  <div class="container about__grid">
+
+    <div class="about__visual">
+      <div class="about__img-main js-parallax" data-speed="0.1">
+        <img src="assets/prof.jpg" width="520" height="680"
+             alt="Interior of Lentech's Photography Studio with professional lighting rigs" loading="lazy"/>
+        <div class="about__corner about__corner--tl" aria-hidden="true"></div>
+        <div class="about__corner about__corner--br" aria-hidden="true"></div>
+      </div>
+      <div class="about__img-accent js-parallax" data-speed="-0.06">
+        <img src="assets/adjust.jpg" width="320" height="240"
+             alt="Photographer adjusting a softbox before a client session" loading="lazy"/>
+      </div>
+      <div class="about__medallion js-tilt" aria-label="Established 2025">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(8,7,6,.15)" stroke-width="1"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(8,7,6,.08)" stroke-width=".5"/>
+          <text x="50" y="43" text-anchor="middle" font-family="Cormorant,serif" font-size="9" fill="#080706" letter-spacing="3">EST.</text>
+          <text x="50" y="60" text-anchor="middle" font-family="Cormorant,serif" font-size="20" font-weight="300" fill="#080706">2025</text>
+          <text x="50" y="72" text-anchor="middle" font-family="Cormorant,serif" font-size="6.5" fill="#080706" letter-spacing="2">OLONGAPO</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="about__copy">
+      <p class="eyebrow js-reveal">About the Studio</p>
+      <h2 class="heading js-reveal">
+        <span class="heading__line">A Studio Built</span>
+        <span class="heading__line">For <em>Your</em> Vision</span>
+      </h2>
+      <div class="about__body js-reveal">
+        <p>Born from a belief that every person deserves a photograph they're genuinely proud of. Tucked inside La Nostra Casa Building along Gordon Avenue, our studio is equipped with professional-grade lighting, versatile backdrops, and a curated prop collection that transforms any session into an editorial experience.</p>
+        <p>Whether you're a solo content creator, a graduating senior, or a whole family — our team ensures you feel confident and camera-ready the moment you walk through the door.</p>
+      </div>
+      <div class="about__pillars js-reveal">
+        <div class="about__pillar">
+          <span class="about__pillar-num" aria-hidden="true">01</span>
+          <div>
+            <strong>Professional Equipment</strong>
+            <p>Studio-grade softboxes, seamless backdrops, and a curated props collection.</p>
+          </div>
+        </div>
+        <div class="about__pillar">
+          <span class="about__pillar-num" aria-hidden="true">02</span>
+          <div>
+            <strong>Expert Guidance</strong>
+            <p>Our photographers coach every angle, expression, and pose.</p>
+          </div>
+        </div>
+        <div class="about__pillar">
+          <span class="about__pillar-num" aria-hidden="true">03</span>
+          <div>
+            <strong>Walk-ins Welcome</strong>
+            <p>Drop in or book ahead — we're ready when you are.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn--dark js-reveal" data-cursor="book">Book Your Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     SERVICES
+═══════════════ -->
+<section class="services section" id="services">
+  <div class="section-num section-num--light" aria-hidden="true">02</div>
+  <div class="services__watermark" aria-hidden="true">STUDIO</div>
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow eyebrow--gold js-reveal">What We Offer</p>
+      <h2 class="heading heading--light js-reveal">
+        <span class="heading__line">Our Services</span>
+      </h2>
+    </div>
+  </div>
+  <div class="services__scroll-outer">
+    <div class="services__grid" id="servicesGrid">
+
+      <article class="svc" data-cursor="view" style="--d:0ms">
+        <div class="svc__img"><img src="assets/self.jpg" width="400" height="300" alt="Person posing solo in a well-lit self-photoshoot studio" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">01</span><h3>Self-Photoshoot</h3><p>Full studio access with pro lighting and props.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:60ms">
+        <div class="svc__img"><img src="assets/with.jpg" width="400" height="300" alt="Photographer directing a client during a portrait session" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">02</span><h3>With Photographer</h3><p>One-on-one sessions for guided, effortless portraits.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:120ms">
+        <div class="svc__img"><img src="assets/family.jpg" width="400" height="300" alt="Happy family laughing during a portrait session" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">03</span><h3>Family Portraits</h3><p>Timeless portraits for the whole family.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:180ms">
+        <div class="svc__img"><img src="assets/bold.jpg" width="400" height="300" alt="Model in a dramatic conceptual photography setup" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">04</span><h3>Conceptual Shoot</h3><p>Bold visions executed with technical excellence.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:240ms">
+        <div class="svc__img"><img src="assets/grad.jpg" width="400" height="300" alt="Graduate holding diploma with a proud smile" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">05</span><h3>Graduation</h3><p>Celebrate your milestone in style.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:300ms">
+        <div class="svc__img"><img src="assets/product.jpg" width="400" height="300" alt="Product photography on a minimalist surface" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">06</span><h3>Product Photography</h3><p>Conversion-ready images for e-commerce and campaigns.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:360ms">
+        <div class="svc__img"><img src="assets/video.jpg" width="400" height="300" alt="Videographer filming in a studio setting" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">07</span><h3>Video Coverage</h3><p>Full production video with editing included.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+      <article class="svc" data-cursor="view" style="--d:420ms">
+        <div class="svc__img"><img src="assets/photo.jpg" width="400" height="300" alt="Friends laughing in a photobooth setup" loading="lazy"/><div class="svc__veil"></div></div>
+        <div class="svc__body"><span class="svc__n" aria-hidden="true">08</span><h3>Photobooth</h3><p>Instant-print fun for events and gatherings.</p><span class="svc__arrow" aria-hidden="true">↗</span></div>
+      </article>
+
+    </div>
+    <p class="services__swipe-hint" aria-hidden="true">← Swipe to explore →</p>
+  </div>
+</section>
+
+<!-- ═══════════════
+     GALLERY
+═══════════════ -->
+<section class="gallery section" id="gallery">
+  <div class="section-num" aria-hidden="true">03</div>
+  <div class="container">
+    <div class="gallery__hd">
+      <div>
+        <p class="eyebrow js-reveal">Portfolio</p>
+        <h2 class="heading js-reveal">
+          <span class="heading__line">From Our Studio</span>
+        </h2>
+      </div>
+      <div class="gallery__filters js-reveal" role="group" aria-label="Filter gallery by category">
+        <button class="gf active" data-filter="all">All</button>
+        <button class="gf" data-filter="portrait">Portraits</button>
+        <button class="gf" data-filter="family">Family</button>
+        <button class="gf" data-filter="graduation">Graduation</button>
+        <button class="gf" data-filter="conceptual">Conceptual</button>
+        <button class="gf" data-filter="product">Product</button>
+      </div>
+    </div>
+    <div class="gallery__grid" id="galleryGrid">
+      <div class="gi gi--tall js-reveal" data-cat="portrait"   data-cursor="view"><img src="assets/studio1.jpg" width="400" height="600" alt="Dramatic black and white portrait of a young woman under a single overhead spotlight" loading="lazy"/><div class="gi__over"><span>Portrait</span></div></div>
+      <div class="gi js-reveal"          data-cat="family"     data-cursor="view"><img src="assets/studio2.jpg" width="400" height="300" alt="Family of three laughing naturally mid-session in a warm studio" loading="lazy"/><div class="gi__over"><span>Family</span></div></div>
+      <div class="gi js-reveal"          data-cat="graduation" data-cursor="view"><img src="assets/studio5.jpg" width="400" height="300" alt="Female graduate in toga proudly holding her diploma" loading="lazy"/><div class="gi__over"><span>Graduation</span></div></div>
+      <div class="gi gi--wide js-reveal" data-cat="conceptual" data-cursor="view"><img src="assets/studio4.jpg" width="600" height="400" alt="Two models in an artistic conceptual shoot with colored gels" loading="lazy"/><div class="gi__over"><span>Conceptual</span></div></div>
+      <div class="gi js-reveal"          data-cat="portrait"   data-cursor="view"><img src="assets/studio6.jpg" width="400" height="300" alt="Man in a well-fitted suit posing for a corporate headshot" loading="lazy"/><div class="gi__over"><span>Portrait</span></div></div>
+      <div class="gi gi--tall js-reveal" data-cat="conceptual" data-cursor="view"><img src="assets/studio3.jpg" width="400" height="600" alt="Female model in a floral dress against a deep dark backdrop" loading="lazy"/><div class="gi__over"><span>Conceptual</span></div></div>
+      <div class="gi js-reveal"          data-cat="family"     data-cursor="view"><img src="assets/studio7.jpg" width="400" height="300" alt="Parents cradling a newborn baby in a soft intimate portrait" loading="lazy"/><div class="gi__over"><span>Family</span></div></div>
+      <div class="gi js-reveal"          data-cat="product"    data-cursor="view"><img src="assets/studio8.jpg" width="400" height="300" alt="Skincare product bottle beautifully lit on a marble surface" loading="lazy"/><div class="gi__over"><span>Product</span></div></div>
+      <div class="gi js-reveal"          data-cat="graduation" data-cursor="view"><img src="assets/studio9.jpg" width="400" height="300" alt="Male graduate in academic cap and gown looking confidently off-camera" loading="lazy"/><div class="gi__over"><span>Graduation</span></div></div>
+      <div class="gi gi--wide js-reveal" data-cat="portrait"   data-cursor="view"><img src="assets/studio10.jpg" width="600" height="400" alt="Couple sitting close together in warm golden studio lighting" loading="lazy"/><div class="gi__over"><span>Couple</span></div></div>
+      <div class="gi js-reveal"          data-cat="product"    data-cursor="view"><img src="assets/studio11.jpg" width="400" height="300" alt="Fashion accessories flatlay on a dark textured surface" loading="lazy"/><div class="gi__over"><span>Product</span></div></div>
+      <div class="gi js-reveal"          data-cat="conceptual" data-cursor="view"><img src="assets/studio12.jpg" width="400" height="300" alt="Subject in a moody themed studio set with decorative props" loading="lazy"/><div class="gi__over"><span>Conceptual</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     PRICING
+═══════════════ -->
+<section class="pricing section" id="pricing">
+  <div class="section-num section-num--light" aria-hidden="true">04</div>
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow eyebrow--gold js-reveal">Investment</p>
+      <h2 class="heading heading--light js-reveal">
+        <span class="heading__line">Popular Packages</span>
+      </h2>
+      <p class="heading-sub js-reveal">A few of our most-booked sessions. Every peso includes real value.</p>
+    </div>
+
+    <div class="teaser-grid">
+
+      <div class="tcard js-reveal" style="--td:0ms">
+        <div class="tcard__tag">Self-Shoot · 1–2 Pax</div>
+        <h3 class="tcard__name">Uno Package</h3>
+        <div class="tcard__price"><span>₱</span>449</div>
+        <ul class="tcard__list">
+          <li>20 mins Unlimited Self-Photoshoot</li>
+          <li>1 Printed 2R &amp; 1 Polaroid</li>
+          <li>1 backdrop color · Free soft copies</li>
+        </ul>
+        <a href="pricing.html" class="btn btn--outline-gold">See Full Details</a>
+      </div>
+
+      <div class="tcard tcard--feat js-reveal" style="--td:80ms">
+        <div class="tcard__badge">Most Booked</div>
+        <div class="tcard__tag">Self-Shoot · 1–8 Pax</div>
+        <h3 class="tcard__name">Kwatro Package</h3>
+        <div class="tcard__price"><span>₱</span>1,499</div>
+        <ul class="tcard__list">
+          <li>30 mins Unlimited Self-Photoshoot</li>
+          <li>1 Printed 4R, 4 Printed 2R &amp; 4 Polaroids</li>
+          <li>1 backdrop color · Free soft copies</li>
+        </ul>
+        <a href="pricing.html" class="btn btn--gold">See Full Details</a>
+      </div>
+
+      <div class="tcard js-reveal" style="--td:160ms">
+        <div class="tcard__tag">Graduation · 1 Pax</div>
+        <h3 class="tcard__name">Prestige Grad</h3>
+        <div class="tcard__price"><span>₱</span>1,299</div>
+        <ul class="tcard__list">
+          <li>8 Toga + 8 Formal + 10 Creative poses</li>
+          <li>1 A4, 1 Printed 4R, 2R &amp; 4 Polaroids</li>
+          <li>Free raw + edited soft copies</li>
+        </ul>
+        <a href="pricing.html" class="btn btn--outline-gold">See Full Details</a>
+      </div>
+
+      <div class="tcard js-reveal" style="--td:240ms">
+        <div class="tcard__tag">Photobooth · 2 hrs</div>
+        <h3 class="tcard__name">Standard Photobooth</h3>
+        <div class="tcard__price"><span>₱</span>3,000</div>
+        <ul class="tcard__list">
+          <li>4R Prints · Free white card frames</li>
+          <li>High quality print · Free layout</li>
+          <li>Props and backdrops · All soft copies</li>
+        </ul>
+        <a href="pricing.html" class="btn btn--outline-gold">See Full Details</a>
+      </div>
+
+    </div>
+
+    <div class="teaser-cta js-reveal">
+      <p>24 packages available &mdash; self-shoots, graduation, photobooth, studio rental, and more.</p>
+      <a href="pricing.html" class="btn btn--gold">View All Packages &amp; Pricing ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════
+     TESTIMONIALS
+═══════════════ -->
+<section class="testimonials section" id="testimonials">
+  <div class="section-num" aria-hidden="true">05</div>
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow js-reveal">Client Words</p>
+      <h2 class="heading js-reveal">
+        <span class="heading__line">What Our Clients Say</span>
+      </h2>
+    </div>
+    <div class="testi-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="tc"><div class="tc__q" aria-hidden="true">"</div><blockquote>"Accommodating staff and so many props available — no need to bring your own. The lighting makes even casual shots look professional."</blockquote><footer class="tc__foot"><div class="tc__av"><img src="assets/stock1.webp" width="44" height="44" alt="Patricia Lhyn" loading="lazy"/></div><div class="tc__meta"><strong>Patricia Lhyn</strong><span>Self-Photoshoot Client</span></div><div class="tc__stars" aria-label="5 stars">★★★★★</div></footer></div>
+
+        <div class="tc"><div class="tc__q" aria-hidden="true">"</div><blockquote>"The staff are incredibly accommodating and the photo quality is exceptional. I will absolutely be coming back. Highly, highly recommended."</blockquote><footer class="tc__foot"><div class="tc__av"><img src="assets/stock2.jpg" width="44" height="44" alt="Loise Abigail Figueroa" loading="lazy"/></div><div class="tc__meta"><strong>Loise Abigail Figueroa</strong><span>Portrait Session Client</span></div><div class="tc__stars" aria-label="5 stars">★★★★★</div></footer></div>
+
+        <div class="tc"><div class="tc__q" aria-hidden="true">"</div><blockquote>"Our family portrait session was wonderful. The photographer was so patient with the kids and the results genuinely moved us to tears."</blockquote><footer class="tc__foot"><div class="tc__av"><img src="assets/stock3.jpg" width="44" height="44" alt="Maria Santos" loading="lazy"/></div><div class="tc__meta"><strong>Maria Santos</strong><span>Family Portrait Client</span></div><div class="tc__stars" aria-label="5 stars">★★★★★</div></footer></div>
+
+        <div class="tc"><div class="tc__q" aria-hidden="true">"</div><blockquote>"I booked a graduation shoot and every single photo was gallery-worthy. Could not have asked for a better team to document this milestone."</blockquote><footer class="tc__foot"><div class="tc__av"><img src="assets/stock4.jpg" width="44" height="44" alt="Andrei Reyes" loading="lazy"/></div><div class="tc__meta"><strong>Andrei Reyes</strong><span>Graduation Session Client</span></div><div class="tc__stars" aria-label="5 stars">★★★★★</div></footer></div>
+
+        <div class="tc"><div class="tc__q" aria-hidden="true">"</div><blockquote>"Rented the studio for a content creation day — worth every peso. Pristine setup and the team was incredibly easy to work with."</blockquote><footer class="tc__foot"><div class="tc__av"><img src="assets/stock5.jpg" width="44" height="44" alt="Kyla Mendoza" loading="lazy"/></div><div class="tc__meta"><strong>Kyla Mendoza</strong><span>Studio Rental Client</span></div><div class="tc__stars" aria-label="5 stars">★★★★★</div></footer></div>
+
+      </div>
+      <div class="testi-nav">
+        <button class="testi-btn" id="testiPrev" aria-label="Previous">←</button>
+        <div class="testi-dots" id="testiDots" role="tablist"></div>
+        <button class="testi-btn" id="testiNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CTA BANNER
+═══════════════ -->
+<section class="cta-band">
+  <div class="cta-band__bg js-parallax" data-speed="0.15">
+    <img src="images/cta-bg.jpg" width="1600" height="800" alt="Wide angle view of the photography studio with dramatic lighting" loading="lazy"/>
+  </div>
+  <div class="cta-band__veil" aria-hidden="true"></div>
+  <div class="container cta-band__inner">
+    <p class="eyebrow eyebrow--gold js-reveal">Ready When You Are</p>
+    <h2 class="cta-band__heading js-reveal">
+      <span class="heading__line">Your Story Deserves</span>
+      <span class="heading__line heading__line--gold-italic">To Be Seen.</span>
+    </h2>
+    <p class="cta-band__sub js-reveal">Sessions available daily. Walk-ins welcome, bookings preferred.</p>
+    <div class="cta-band__btns js-reveal">
+      <a href="#contact" class="btn btn--light" data-cursor="book">Reserve Your Slot</a>
+      <a href="tel:09189330818" class="btn btn--outline-light" data-cursor="call">0918-933-0818</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CONTACT
+═══════════════ -->
+<section class="contact section" id="contact">
+  <div class="section-num" aria-hidden="true">06</div>
+  <div class="container contact__grid">
+
+    <div class="contact__info">
+      <p class="eyebrow js-reveal">Get in Touch</p>
+      <h2 class="heading js-reveal">
+        <span class="heading__line">Let's Create</span>
+        <span class="heading__line">Something <em>Beautiful</em></span>
+      </h2>
+      <p class="contact__intro js-reveal">Have a concept in mind? Ready to book? Reach us through any channel below — we respond fast.</p>
+
+      <div class="contact__details js-reveal">
+        <a class="cd" href="https://maps.google.com/?q=La+Nostra+Casa+Building+Olongapo" target="_blank" rel="noopener noreferrer">
+          <span class="cd__icon" aria-hidden="true">📍</span>
+          <div class="cd__body"><strong>Location</strong><p>2F La Nostra Casa Bldg., 36 Gordon Ave., Asinan, Olongapo City</p></div>
+          <span class="cd__arr" aria-hidden="true">↗</span>
+        </a>
+        <a class="cd" href="tel:09189330818">
+          <span class="cd__icon" aria-hidden="true">📞</span>
+          <div class="cd__body"><strong>Phone</strong><p>0918-933-0818</p></div>
+          <span class="cd__arr" aria-hidden="true">↗</span>
+        </a>
+        <a class="cd" href="mailto:lentechsphotographystudio@gmail.com">
+          <span class="cd__icon" aria-hidden="true">✉️</span>
+          <div class="cd__body"><strong>Email</strong><p>lentechsphotographystudio@gmail.com</p></div>
+          <span class="cd__arr" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="contact__socials js-reveal">
+        <a href="https://facebook.com/lentechsphotographystudio" target="_blank" rel="noopener noreferrer" class="csoc" data-cursor="visit">Facebook ↗</a>
+        <a href="https://instagram.com/lentechphotography" target="_blank" rel="noopener noreferrer" class="csoc" data-cursor="visit">@lentechphotography ↗</a>
+      </div>
+    </div>
+
+    <div class="contact__form-box js-reveal">
+      <form class="cform" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="cform__row">
+          <div class="cf"><label for="cname">Full Name <span aria-hidden="true">*</span></label><input type="text" id="cname" name="name" placeholder="Juan dela Cruz" required autocomplete="name"/><div class="cf__line" aria-hidden="true"></div></div>
+          <div class="cf"><label for="cemail">Email <span aria-hidden="true">*</span></label><input type="email" id="cemail" name="email" placeholder="you@email.com" required autocomplete="email"/><div class="cf__line" aria-hidden="true"></div></div>
+        </div>
+        <div class="cform__row">
+          <div class="cf"><label for="cphone">Phone</label><input type="tel" id="cphone" name="phone" placeholder="09XX-XXX-XXXX" autocomplete="tel"/><div class="cf__line" aria-hidden="true"></div></div>
+          <div class="cf"><label for="cservice">Service <span aria-hidden="true">*</span></label>
+            <select id="cservice" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Self-Photoshoot</option>
+              <option>Photoshoot with Photographer</option>
+              <option>Family Portraits</option>
+              <option>Conceptual Photoshoot</option>
+              <option>Graduation Photoshoot</option>
+              <option>Product Photography</option>
+              <option>Studio Rental</option>
+              <option>Event / Video Coverage</option>
+              <option>Photobooth</option>
+              <option>Other</option>
+            </select>
+            <div class="cf__line" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="cf"><label for="cmsg">Message</label><textarea id="cmsg" name="message" rows="4" placeholder="Tell us about your shoot — preferred date, concept, or any questions."></textarea><div class="cf__line" aria-hidden="true"></div></div>
+        <button type="submit" class="btn btn--gold btn--full btn--submit" data-cursor="send">
+          <span class="bst">Send Inquiry</span><span class="bsi" aria-hidden="true">→</span>
+        </button>
+        <p class="cform__note">We typically respond within a few hours. Fastest reply via Facebook Messenger.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════
+     FOOTER
+═══════════════ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="container footer__top-in">
+      <div class="footer__brand">
+        <span class="footer__logo"><span class="footer__logo-l">L</span>ENTECH'S</span>
+        <p><em>"Where Every Click Tells Your Story"</em></p>
+        <span class="footer__est">Photography Studio · Est. 2025</span>
+      </div>
+      <a href="#contact" class="footer__book" data-cursor="book">Book a Session ↗</a>
+    </div>
+  </div>
+  <div class="footer__mid">
+    <div class="container footer__mid-in">
+      <div class="fc"><strong>Services</strong><ul>
+        <li><a href="#services">Self-Photoshoot</a></li>
+        <li><a href="#services">With Photographer</a></li>
+        <li><a href="#services">Family Portraits</a></li>
+        <li><a href="#services">Graduation</a></li>
+        <li><a href="#services">Product Photography</a></li>
+        <li><a href="#services">Video Coverage</a></li>
+      </ul></div>
+      <div class="fc"><strong>Studio</strong><ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Book a Session</a></li>
+      </ul></div>
+      <div class="fc"><strong>Contact</strong><ul>
+        <li><a href="tel:09189330818">0918-933-0818</a></li>
+        <li><a href="mailto:lentechsphotographystudio@gmail.com">lentechsphotographystudio@gmail.com</a></li>
+        <li>2F La Nostra Casa Bldg.,<br/>36 Gordon Ave., Olongapo City</li>
+      </ul></div>
+      <div class="fc"><strong>Follow</strong><ul>
+        <li><a href="https://facebook.com/lentechsphotographystudio" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://instagram.com/lentechphotography" target="_blank" rel="noopener">@lentechphotography</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <div class="container footer__btm-in">
+      <p>© 2025 Lentech's Photography Studio. All rights reserved.</p>
+      <p>Designed for stories worth telling.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb__close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb__prev"  id="lbPrev"  aria-label="Previous">←</button>
+  <button class="lb__next"  id="lbNext"  aria-label="Next">→</button>
+  <div class="lb__stage"><img src="" alt="" id="lbImg"/><p id="lbCap"></p></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
